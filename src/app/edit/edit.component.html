@@ -1,0 +1,30 @@
+<section>
+  <div>
+    <label for="inputDate">Fecha: </label>
+    <input type="date" id="inputDate" min="2000-01-01" [max]="today" (change)="handleChange($event.target)">
+  </div>
+
+  <div>
+    <p>Estado:</p>
+    <input type="radio" name="input-radio" value=":)" id="inputMoodHappy" (change)="handleChange($event.target)">
+    <label for="inputHappy">:)</label>
+    <input type="radio" name="input-radio" value=":(" id="inputMoodSad" (change)="handleChange($event.target)">
+    <label for="inputSad">:(</label>
+  </div>
+
+  <div *ngIf="inputMood === ':)'">
+    <p>Mensaje:</p>
+    <textarea name="" id="inputMessage" placeholder="por qué ha sido un buen día?" (change)="handleChange($event.target)"></textarea>
+    <!-- <label
+    [class.message-filled]="inputMessage"
+        for="inputMessage"
+      >
+        ¿Why is it a good day?
+      </label> -->
+  </div>
+
+  <div>
+    <button>Guardar</button>
+    <button>Cancelar</button>
+  </div>
+</section>
